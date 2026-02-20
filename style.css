@@ -91,3 +91,89 @@ p {
 .dark-mode h1 {
     color: #007bff; /* Name leuchtet blau im Dark Mode */
 }
+
+/* Container für Button und Anzeige */
+.likes-container {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Eine feine Trennlinie */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Der Like-Button */
+#like-btn {
+    background-color: #ff4757; /* Ein schönes "Herz-Rot" */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(255, 71, 87, 0.2);
+}
+
+/* Hover-Effekt: Button wird etwas größer und dunkler */
+#like-btn:hover {
+    background-color: #e84118;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 71, 87, 0.3);
+}
+
+/* Aktiver Klick: Button drückt sich leicht ein */
+#like-btn:active {
+    transform: scale(0.95);
+}
+
+/* Die Anzeige der Zahl */
+#like-count {
+    font-weight: bold;
+    color: #ff4757;
+    font-size: 1.1rem;
+}
+
+/* Anpassung für den Dark Mode (falls aktiv) */
+.dark-mode .likes-container {
+    border-top-color: #444;
+}
+
+.dark-mode p {
+    color: #ccc;
+}
+
+/* Styling für den Modus-Wechsel-Button */
+#theme-btn {
+    background-color: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover-Effekt: Der Button füllt sich mit Farbe */
+#theme-btn:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Dark Mode Anpassung für den Button selbst */
+.dark-mode #theme-btn {
+    border-color: #f1c40f; /* Ein schönes Sonnengelb für den Nacht-Modus */
+    color: #f1c40f;
+}
+
+.dark-mode #theme-btn:hover {
+    background-color: #f1c40f;
+    color: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
+}

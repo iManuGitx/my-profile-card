@@ -12,3 +12,19 @@ function wechselModus() {
 
 // 3. Dem Button sagen: "Hör zu! Wenn du geklickt wirst, führ die Funktion aus."
 button.addEventListener('click', wechselModus);
+
+// 1. Elemente selektieren (ändern sich nicht -> const)
+const likeBtn = document.getElementById('like-btn');
+const likeDisplay = document.getElementById('like-count');
+
+// 2. Den Startwert festlegen (wird sich ändern -> let)
+let count = 0;
+
+// 3. Die Funktion schreiben
+likeBtn.addEventListener('click', () => {
+    count = count + 1; // Erhöhe den Wert um 1
+    likeDisplay.innerText = count; // Schreibe den neuen Wert ins HTML
+    
+    // Kleiner Bonus: Konsolenausgabe zur Kontrolle
+    console.log("Aktuelle Likes: " + count);
+});

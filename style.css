@@ -1,0 +1,78 @@
+/* 1. Globales Reset (Best Practice) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Den Body als Container nutzen, um die Karte zu zentrieren */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Ein angenehmes Hellgrau */
+    display: flex;
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center;     /* Vertikal zentrieren */
+    min-height: 100vh;       /* Die volle Höhe des Bildschirms nutzen */
+}
+
+
+
+/* Die Karte selbst */
+.card {
+    background-color: white;
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px; /* Abgerundete Ecken */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Ein weicher Schatten */
+}
+
+/* Das Profilbild */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Macht das Bild kreisrund */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #007bff; /* Ein blauer Rahmen */
+}
+
+/* Texte */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Skills / Badges */
+.skills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Für den weichen Hover-Effekt */
+    cursor: pointer;
+}
+
+/* Hover-Effekt */
+.badge:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-3px); /* Hüpft leicht nach oben */
+}

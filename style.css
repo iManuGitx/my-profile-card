@@ -76,3 +76,18 @@ p {
     color: white;
     transform: translateY(-3px); /* Hüpft leicht nach oben */
 }
+
+/* Diese Klasse wird per JS an den body "geheftet" oder entfernt */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.dark-mode .card {
+    background-color: #2d2d2d;
+    color: white;
+}
+
+.dark-mode h1 {
+    color: #007bff; /* Name leuchtet blau im Dark Mode */
+}

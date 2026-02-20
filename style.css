@@ -19,12 +19,16 @@ body {
 
 /* Die Karte selbst */
 .card {
+    b.card {
     background-color: white;
-    width: 350px;
+    /* width: 350px; <-- Das löschen wir oder kommentieren es aus */
+    width: 90%;          /* Standardmäßig fast die volle Breite auf kleinen Screens */
+    max-width: 350px;    /* Aber niemals breiter als 350px auf großen Screens */
     padding: 30px;
     text-align: center;
-    border-radius: 15px; /* Abgerundete Ecken */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Ein weicher Schatten */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 }
 
 /* Das Profilbild */
@@ -176,4 +180,20 @@ p {
     background-color: #f1c40f;
     color: #1a1a1a;
     box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
+}
+
+/* Wenn der Bildschirm schmaler als 480px ist (typisch Smartphone) */
+@media (max-width: 480px) {
+    .card {
+        padding: 20px; /* Weniger Polsterung, um Platz zu sparen */
+    }
+
+    h1 {
+        font-size: 20px; /* Schrift etwas kleiner auf dem Handy */
+    }
+
+    .profile-img {
+        width: 100px;  /* Bild etwas kleiner */
+        height: 100px;
+    }
 }

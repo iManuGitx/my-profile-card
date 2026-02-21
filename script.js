@@ -1,30 +1,54 @@
-console.log("Das Gehirn ist online!");
+// --- 1. DATEN (Zustand der App) ---
+const mySkills = ["HTML5", "CSS3", "JavaScript", "Git"];
+let count = 0;
 
-// 1. Das Element finden (Selektieren)
-const button = document.getElementById('theme-btn');
-
-// 2. Eine Funktion definieren, was passieren soll
-function wechselModus() {
-    // Wir greifen auf den body zu und schalten eine CSS-Klasse um
-    document.body.classList.toggle('dark-mode');
-    console.log("Modus wurde gewechselt!");
-}
-
-// 3. Dem Button sagen: "Hör zu! Wenn du geklickt wirst, führ die Funktion aus."
-button.addEventListener('click', wechselModus);
-
-// 1. Elemente selektieren (ändern sich nicht -> const)
+// --- 2. ELEMENTE SELEKTIEREN ---
+const skillsContainer = document.getElementById('skills-container');
+const skillInput = document.getElementById('skill-input');
+const addBtn = document.getElementById('add-skill-btn');
+const themeBtn = document.getElementById('theme-btn');
 const likeBtn = document.getElementById('like-btn');
 const likeDisplay = document.getElementById('like-count');
 
-// 2. Den Startwert festlegen (wird sich ändern -> let)
-let count = 0;
+// --- 3. FUNKTIONEN ---
 
-// 3. Die Funktion schreiben
-likeBtn.addEventListener('click', () => {
-    count = count + 1; // Erhöhe den Wert um 1
-    likeDisplay.innerText = count; // Schreibe den neuen Wert ins HTML
-    
-    // Kleiner Bonus: Konsolenausgabe zur Kontrolle
-    console.log("Aktuelle Likes: " + count);
+// Funktion: Skills im HTML anzeigen
+function renderSkills() {
+    // Container leeren
+    skillsContainer.innerHTML = ''; 
+
+    // Für jeden Skill im Array ein Element erstellen
+    mySkills.forEach(skill => {
+        const badge = document.createElement('span');
+        badge.classList.add('badge');
+        badge.innerText = skill;
+        skillsContainer.appendChild(badge);
+    });
+}
+
+// --- 4. EVENT LISTENER ---
+
+// Skill hinzufügen
+addBtn.addEventListener('click', () => {
+    const newSkill = skillInput.value;
+    if (newSkill !== "") {
+        mySkills.push(newSkill);
+        renderSkills(); // Neu zeichnen
+        skillInput.value = ""; // Input leeren
+    }
 });
+
+// Dark Mode Toggle
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+
+// Like Counter
+likeBtn.addEventListener('click', () => {
+    count++;
+    likeDisplay.innerText = count;
+});
+
+// --- 5. INITIALISIERUNG ---
+// Diese Zeile sorgt dafür, dass die Skills beim Laden sofort da sind!
+renderSkills();

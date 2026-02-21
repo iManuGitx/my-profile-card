@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Profile Card</title>
+    <title>Meine Profilkarte</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="card">
         <img src="https://picsum.photos/200" alt="Profilbild" class="profile-img">
+        
         <h1>Manuel Heider</h1>
-        <p>Angehender Fullstack Developer. Ich liebe es, Probleme zu lösen und sauberen Code zu schreiben.</p>
+        <p>Angehender Fullstack Developer auf dem Weg zum ersten Job.</p>
+
+        <button id="theme-btn">Modus wechseln</button>
+
+        <div class="skills" id="skills-container">
+            </div>
+
+        <div class="add-skill-ui">
+            <input type="text" id="skill-input" placeholder="Neuer Skill...">
+            <button id="add-skill-btn">Hinzufügen</button>
+        </div>
 
         <div class="likes-container">
-    <button id="like-btn">❤️ Like</button>
-    <p>Likes: <span id="like-count">0</span></p>
-</div>
-        
-         <button id="theme-btn">Modus wechseln</button>
-
-        <div class="skills">
-            <span class="badge">HTML</span>
-            <span class="badge">CSS</span>
-            <span class="badge">WordPress</span>
-            <span class="badge">JavaScript</span>
+            <button id="like-btn">❤️ Like</button>
+            <p>Likes: <span id="like-count">0</span></p>
         </div>
-       
     </div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
-
-
 </html>
